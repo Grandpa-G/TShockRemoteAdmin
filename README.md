@@ -3,4 +3,4 @@ This tool provides a method to remotely control many operational aspects of at T
 
 An extension (dll) is required to augment the existing REST API functions to provide a more robust set of capabilities used to manage the server. The dll must be placed in the plugin folder similar to all other TShock plugins.
 
-The RESTAPI funtionality must be turned on through the use of a configuration option.
+The RESTAPI funtionality must be turned on through the use of a configuration option. 

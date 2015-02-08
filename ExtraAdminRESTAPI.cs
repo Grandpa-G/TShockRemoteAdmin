@@ -733,11 +733,11 @@ namespace extraAdminREST
         }
 
         /// <summary>
-        /// Gets a list of SSCInventoryLog entries.
+        /// Gets a list of SSCInventoryLog entries. 
         /// </summary>
         public List<SSCInventory> GetSSCInventory(int account)
         {
-            SSCInventory rec;
+            SSCInventory rec; 
             String sql;
 
             List<SSCInventory> SSCInventorylist = new List<SSCInventory>();
