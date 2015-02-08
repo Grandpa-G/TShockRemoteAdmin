@@ -6,4 +6,4 @@ An extension (dll) is required to augment the existing REST API functions to pro
 The RESTAPI funtionality must be turned on through the use of a configuration option. 
  
 #####Copyright Notice#
-The Remote Admin tool is the property of RG Consulting, Inc. Anyone may use this tool however none may sell the tool or profit from its development other than the owner. The RESTAdminAPI is open source and may be used by anyone without restriction.
+The Remote Admin tool is the property of RG Consulting, Inc. Anyone may use this tool however no one may sell the tool or profit from its development other than the owner. The RESTAdminAPI is open source and may be used by anyone without restriction.
