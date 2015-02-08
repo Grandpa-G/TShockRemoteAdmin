@@ -1,0 +1,9 @@
+cd ~/workspace/TerrariaAdminRESTAPI/TemplatePlugin
+
+git add bin/
+git add Properties/
+git add ExtraAdminRESTAPI.cs
+git add README.md
+
+git commit -m "base"
+git push github master -f
