@@ -70,22 +70,22 @@ namespace extraAdminREST
         public override void Initialize()
         {
               TShock.RestApi.Register(new SecureRestCommand("/AdminREST/version", AdminRest, "AdminREST.allow"));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/getPlayerData", getPlayerData));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/GroupList", GroupList));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/PlayerList", PlayerList));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/BanList", BanListV2));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/WorldInfo", WorldInfo));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/GroupInfo", GroupInfo));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/serverInfo", serverInfo));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/getLog", getLog));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/updateMOTD", updateMOTD));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/getConfig", getConfig));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/getConfigDescription", getConfigDescription));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/updateConfig", updateConfig));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/searchusers", searchUsers));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/updateInventory", updateInventory));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/userlist", UserList));
-            TShock.RestApi.Register(new RestCommand("/AdminREST/getInventory", getInventory));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/getPlayerData", getPlayerData, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/GroupList", GroupList, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/PlayerList", PlayerList, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/BanList", BanListV2, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/WorldInfo", WorldInfo, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/GroupInfo", GroupInfo, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/serverInfo", serverInfo, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/getLog", getLog, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/updateMOTD", updateMOTD, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/getConfig", getConfig, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/getConfigDescription", getConfigDescription, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/updateConfig", updateConfig, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/searchusers", searchUsers, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/updateInventory", updateInventory, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/userlist", UserList, "AdminREST.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/getInventory", getInventory, "AdminREST.allow"));
  
             FileTools.SetupConfig();
         }
@@ -682,6 +682,7 @@ namespace extraAdminREST
 					{"nickname", tsPlayer.Name},
 					{"index", tsPlayer.Index},
 					{"username", tsPlayer.UserAccountName ?? ""},
+					{"account", tsPlayer.UserID},
 					{"group", tsPlayer.Group.Name},
 					{"active", tsPlayer.Active},
 					{"state", tsPlayer.State},
