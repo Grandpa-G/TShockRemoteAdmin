@@ -190,10 +190,16 @@ namespace extraAdminREST
             var banList = new ArrayList();
             foreach (var ban in TShock.Bans.GetBans())
             {
-                TShockAPI.DB.User user = TShock.Users.GetUserByName(ban.Name);
-                int userId = user.ID;
-                Console.Write(userId);
-                banList.Add(
+                int userId = -1;
+                try
+                {
+                    TShockAPI.DB.User user = TShock.Users.GetUserByName(ban.Name);
+                    userId = user.ID;
+                }
+                catch (NullReferenceException e) {
+                    userId = -1;
+                }
+                 banList.Add(
                     new Dictionary<string, string>
 					{
 						{"name", null == ban.Name ? "" : ban.Name},
@@ -206,7 +212,7 @@ namespace extraAdminREST
 					}
                 );
             }
-
+  
             return new RestObject() { { "bans", banList } };
         }
 
