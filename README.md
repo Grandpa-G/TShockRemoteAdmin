@@ -5,5 +5,11 @@ An extension (dll) is required to augment the existing REST API functions to pro
 
 The RESTAPI funtionality must be turned on through the use of a configuration option. 
  
+ ####**Links**#
+ 
+[Download](https://www.dropbox.com/s/85ky7lyodm6jsxxxxxu6/TShockAdmin.zip?dl=0) | 
+[Source](https://github.com/Grandpa-G/TShockRemoteAdmin.git) | 
+[Wiki Documentation](https://github.com/Grandpa-G/TShockRemoteAdmin/wiki/Remote-Admin-Overview)
+
 #####Copyright Notice#
 The Remote Admin tool is the property of RG Consulting, Inc. Anyone may use this tool however no one may sell the tool or profit from its development other than the owner. The RESTAdminAPI is open source and may be used by anyone without restriction.
