@@ -7,7 +7,7 @@ The RESTAPI funtionality must be turned on through the use of a configuration op
  
 ###Links#
  
-[Download](https://github.com/Grandpa-G/TShockRemoteAdmin/TShockAdmin.zip) | 
+[Download](https://github.com/Grandpa-G/TShockRemoteAdmin/blob/master/TShockAdmin.zip) | 
 [Source](https://github.com/Grandpa-G/TShockRemoteAdmin.git) | 
 [Wiki Documentation](https://github.com/Grandpa-G/TShockRemoteAdmin/wiki/Remote-Admin-Overview)
 
