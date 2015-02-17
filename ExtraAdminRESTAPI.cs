@@ -101,7 +101,8 @@ namespace extraAdminREST
                   "(Server Broadcast) " + message,
                   Convert.ToByte(TShock.Config.BroadcastRGB[0]), Convert.ToByte(TShock.Config.BroadcastRGB[1]),
                   Convert.ToByte(TShock.Config.BroadcastRGB[2]));
-            return RestResponse("Message delievered.");
+            return RestResponse("Message delievered.");
+//            return RestResponse("Message delieveredóú.");
         }
 
        private object ConsoleInfo(RestRequestArgs args)
@@ -969,6 +970,7 @@ namespace extraAdminREST
         public UserList(Int32 id, string username, string usergroup, string registered, string lastaccessed, string knownIPs)
         {
             Id = id;
+            Console.Write(UserName + ":" + username);
             UserName = username;
             UserGroup = usergroup;
             Registered = registered;
