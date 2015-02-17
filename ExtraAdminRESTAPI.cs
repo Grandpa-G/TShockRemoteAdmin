@@ -71,6 +71,7 @@ namespace extraAdminREST
         {
               TShock.RestApi.Register(new SecureRestCommand("/AdminREST/version", getVersion, "AdminRest.allow"));
               TShock.RestApi.Register(new SecureRestCommand("/AdminREST/ConsoleInfo", ConsoleInfo, "AdminRest.allow"));
+              TShock.RestApi.Register(new SecureRestCommand("/AdminREST/Broadcast", Broadcast, "AdminRest.allow"));
               TShock.RestApi.Register(new SecureRestCommand("/AdminREST/getPlayerData", getPlayerData, "AdminRest.allow"));
               TShock.RestApi.Register(new SecureRestCommand("/AdminREST/GroupList", GroupList, "AdminRest.allow"));
               TShock.RestApi.Register(new SecureRestCommand("/AdminREST/PlayerList", PlayerList, "AdminRest.allow"));
@@ -90,8 +91,20 @@ namespace extraAdminREST
  
             FileTools.SetupConfig();
         }
+        private object Broadcast(RestRequestArgs args)
+        {
+            if (string.IsNullOrWhiteSpace(args.Parameters["msg"]))
+                return RestMissingParam("msg");
+            String message = args.Parameters["msg"];
 
-        private object ConsoleInfo(RestRequestArgs args)
+            TShock.Utils.Broadcast(
+                  "(Server Broadcast) " + message,
+                  Convert.ToByte(TShock.Config.BroadcastRGB[0]), Convert.ToByte(TShock.Config.BroadcastRGB[1]),
+                  Convert.ToByte(TShock.Config.BroadcastRGB[2]));
+            return RestResponse("Message delievered.");
+        }
+
+       private object ConsoleInfo(RestRequestArgs args)
         {
             if (string.IsNullOrWhiteSpace(args.Parameters["msg"]))
                 return RestMissingParam("msg");
